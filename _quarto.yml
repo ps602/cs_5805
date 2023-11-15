@@ -9,6 +9,7 @@ website:
       - href: index.qmd
         text: Linear Regression and Non-Linear Regressiion
       - about.qmd
+      - blog3.qmd
 
 format:
   html:
