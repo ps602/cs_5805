@@ -25,9 +25,9 @@ An event is a subset of the sample space, representing a specific outcome or a c
 
 **1. Probability of any Event:** The probability of an event A in the sample space S, P(A) cannot be negative or more than 1. The probability of all the events in the sample space S adds to 1.
 
-            P(A) >= 0
+            P(A) ≥ 0
 
-            P(A) <= 1
+            P(A) ≤ 1
 
             P(S) = 1
 
@@ -91,33 +91,199 @@ A continuous random variable is one that can take any value within a given range
 
 ## Probability Distributions
 
-In probability theory, a probability distribution describes the likelihood of various outcomes in a sample space. It provides a way to model and analyze uncertainty by assigning probabilities to different events. Probability distributions are fundamental tools in probability theory, offering insights into the nature of random variables and helping us make predictions about their behavior.
+In probability theory, a probability distribution describes the likelihood of various outcomes in a sample space. It provides a way to model and analyze uncertainty by assigning probabilities to different events. Probability distributions are fundamental tools in probability theory, offering insights into the nature of random variables and helping us make predictions about their behavior. Probability distributions help quantify the uncertainty associated with different outcomes of a random variable. They provide a systematic way to express the likelihood of each possible value.
 
-Characterizing Uncertainty: Probability distributions help quantify the uncertainty associated with different outcomes of a random variable. They provide a systematic way to express the likelihood of each possible value.
-
-Statistical Inference: Probability distributions form the basis for statistical inference. They allow us to make predictions about the population based on a sample and make informed decisions under uncertainty.
-
-Modeling Random Processes: Probability distributions are used to model various random processes in diverse fields such as physics, finance, biology, and engineering. They provide a mathematical framework to describe the probabilistic nature of real-world phenomena.
+Probability distributions form the basis for statistical inference. They allow us to make predictions about the population based on a sample and make informed decisions under uncertainty. Probability distributions are used to model various random processes in diverse fields such as physics, finance, biology, and engineering. They provide a mathematical framework to describe the probabilistic nature of real-world phenomena.
 
 **Uniform Distribution**
 
-The uniform distribution is characterized by all outcomes being equally likely. Each value within a specified range has the same probability of occurring.
+The uniform distribution is characterized by all outcomes being equally likely. Each value within a specified range has the same probability of occurring. The probability density function (PDF) for a continuous uniform distribution over the interval [a,b] is given by:
+
+            f(x)= 1/b−a  for a ≤ x ≤ b
+
+Consider the example of rolling a fair six-sided die. Each face of the die has an equal chance of landing face up. If we assume the die is unbiased, the outcome of each roll follows a uniform distribution over the discrete values {1,2,3,4,5,6}. Each number has a probability of 1/6 of occurring.
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import uniform
+
+# Define the range [a, b]
+a = 1
+b = 6
+
+# Generate a sample of 1000 values from a uniform distribution
+sample = uniform.rvs(loc=a, scale=b-a, size=1000)
+
+# Plot the histogram of the sample
+plt.hist(sample, bins=20, density=True, alpha=0.7, color='blue')
+
+# Plot the probability density function (PDF)
+x = np.linspace(a, b, 100)
+plt.plot(x, uniform.pdf(x, loc=a, scale=b-a), 'r-', lw=2, label='Uniform PDF')
+
+# Add labels and a legend
+plt.xlabel('Outcome')
+plt.ylabel('Probability Density')
+plt.title('Uniform Distribution Example')
+plt.legend()
+
+# Show the plot
+plt.show()
+```
 
 **Binomial Distribution**
 
-The binomial distribution models the number of successes in a fixed number of independent Bernoulli trials, where each trial has only two possible outcomes (success or failure).
+The binomial distribution models the number of successes in a fixed number of independent and identically distributed Bernoulli trials, where each trial has only two possible outcomes (usually termed as "success" and "failure"). The probability mass function (PMF) of a binomial distribution is given by:
+             
+             P(X=k)=( n_p_k ) p^k (1-p)^(n-k)
+​
+where:
+n is the number of trials,
+k is the number of successes,
+p is the probability of success on a single trial, and (1−p) is the probability of failure on a single trial.
+
+Consider the example of flipping a biased coin. Let's say you have a coin that has a 60% chance of landing heads (success) and a 40% chance of landing tails (failure). If you flip this coin 5 times, you can model the number of heads obtained using a binomial distribution.
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import binom
+
+# Define parameters
+n_trials = 5  # Number of coin flips
+p_success = 0.6  # Probability of getting heads
+
+# Generate possible outcomes (0 to n_trials)
+x = np.arange(0, n_trials+1)
+
+# Calculate binomial probabilities for each outcome
+binomial_pmf = binom.pmf(x, n_trials, p_success)
+
+# Plot the probability mass function (PMF)
+plt.stem(x, binomial_pmf, basefmt='b-', linefmt='b-', markerfmt='bo')
+plt.title('Binomial Distribution Example')
+plt.xlabel('Number of Heads')
+plt.ylabel('Probability')
+plt.show()
+```
+
 
 **Gaussian Distribution**
 
-The normal distribution is a continuous probability distribution characterized by a bell-shaped curve. It is fully described by its mean (average) and standard deviation.
+The Gaussian distribution, also known as the normal distribution, is a continuous probability distribution that is symmetric around its mean. It is characterized by its bell-shaped curve. The probability density function (PDF) of a normal distribution is given by:
+
+f(x;μ,σ)= 1/σroot(2π) e -1/3(x-mu)/sigma^2 
+
+where:
+μ is the mean,
+σ is the standard deviation
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm
+
+# Define parameters
+mean_height = 170  # Mean height in centimeters
+std_deviation = 10  # Standard deviation in centimeters
+
+# Generate a sample of 1000 values from a normal distribution
+sample = np.random.normal(mean_height, std_deviation, 1000)
+
+# Plot the histogram of the sample
+plt.hist(sample, bins=30, density=True, alpha=0.7, color='blue')
+
+# Plot the probability density function (PDF)
+x = np.linspace(mean_height - 4*std_deviation, mean_height + 4*std_deviation, 100)
+plt.plot(x, norm.pdf(x, mean_height, std_deviation), 'r-', lw=2, label='Normal PDF')
+
+# Add labels and a legend
+plt.xlabel('Height (cm)')
+plt.ylabel('Probability Density')
+plt.title('Gaussian Distribution Example')
+plt.legend()
+
+# Show the plot
+plt.show()
+```
+
 
 **Poisson Distribution**
 
-The Poisson distribution models the number of events that occur in a fixed interval of time or space. It is often used for rare events with a known average rate of occurrence.
+The Poisson distribution models the number of events that occur in a fixed interval of time or space. It is often used for rare events with a known average rate of occurrence. The probability mass function (PMF) of a Poisson distribution is given by:
+
+Insert formula
+
+Insert defining elements
+
+Consider a scenario where you are observing the number of customer arrivals at a store in a given hour, and you know that, on average, 5 customers arrive per hour. The Poisson distribution can be used to model the probability of observing a specific number of customer arrivals in that hour.
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import poisson
+
+# Define parameter
+average_rate = 5  # Average number of events per interval
+
+# Generate possible outcomes (0 to 20 events)
+x = np.arange(0, 21)
+
+# Calculate Poisson probabilities for each outcome
+poisson_pmf = poisson.pmf(x, average_rate)
+
+# Plot the probability mass function (PMF)
+plt.stem(x, poisson_pmf, basefmt='b-', linefmt='b-', markerfmt='bo')
+plt.title('Poisson Distribution Example')
+plt.xlabel('Number of Events')
+plt.ylabel('Probability')
+plt.show()
+```
+
 
 **Exponential Distribution**
 
-The exponential distribution models the time between events in a Poisson process. It is characterized by a constant hazard rate.
+The exponential distribution models the time between events in a Poisson process, where events occur continuously and independently at a constant average rate. It is characterized by its memoryless property, meaning that the probability of an event occurring in the next time unit is independent of the past. The probability density function (PDF) of an exponential distribution is given by:
+
+Insert formula
+
+Define elements
+
+Consider a scenario where customers arrive at a service point, and the time between successive arrivals follows an exponential distribution. This can be applied to model the inter-arrival times in a queue, the time between calls at a call center, or the time between arrivals of buses at a bus stop.
+
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import expon
+
+# Define parameter
+rate_parameter = 0.5  # Average number of events per unit time
+
+# Generate a sample of 1000 values from an exponential distribution
+sample = expon.rvs(scale=1/rate_parameter, size=1000)
+
+# Plot the histogram of the sample
+plt.hist(sample, bins=30, density=True, alpha=0.7, color='blue')
+
+# Plot the probability density function (PDF)
+x = np.linspace(0, 5, 100)
+plt.plot(x, expon.pdf(x, scale=1/rate_parameter), 'r-', lw=2, label='Exponential PDF')
+
+# Add labels and a legend
+plt.xlabel('Time Between Events')
+plt.ylabel('Probability Density')
+plt.title('Exponential Distribution Example')
+plt.legend()
+
+# Show the plot
+plt.show()
+
+```
+
+
+
 
 This project requires Python 3.7 or above:
 
