@@ -7,13 +7,6 @@
     "text": "Chapter 4 – Training Models\nThis notebook contains all the sample code and solutions to the exercises in chapter 4.\nThis project requires Python 3.7 or above:\nimport sys\n\nassert sys.version_info &gt;= (3, 7)\nIt also requires Scikit-Learn ≥ 1.0.1:\nfrom packaging import version\nimport sklearn\n\nassert version.parse(sklearn.__version__) &gt;= version.parse(\"1.0.1\")\nAs we did in previous chapters, let’s define the default font sizes to make the figures prettier:\nimport matplotlib.pyplot as plt\n\nplt.rc('font', size=14)\nplt.rc('axes', labelsize=14, titlesize=14)\nplt.rc('legend', fontsize=14)\nplt.rc('xtick', labelsize=10)\nplt.rc('ytick', labelsize=10)\nAnd let’s create the images/training_linear_models folder (if it doesn’t already exist), and define the save_fig() function which is used through this notebook to save the figures in high-res for the book:\nfrom pathlib import Path\n\nIMAGES_PATH = Path() / \"images\" / \"training_linear_models\"\nIMAGES_PATH.mkdir(parents=True, exist_ok=True)\n\ndef save_fig(fig_id, tight_layout=True, fig_extension=\"png\", resolution=300):\n    path = IMAGES_PATH / f\"{fig_id}.{fig_extension}\"\n    if tight_layout:\n        plt.tight_layout()\n    plt.savefig(path, format=fig_extension, dpi=resolution)"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
     "objectID": "index.html#the-normal-equation",
     "href": "index.html#the-normal-equation",
     "title": "Setup",
