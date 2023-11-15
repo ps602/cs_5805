@@ -327,7 +327,6 @@ Insert Formula
 
 Add an example in a die setting
 
-
 ```{python}
 # Calculate the variance
 variance = sum((x - expected_value)**2 * p for x, p in zip(outcomes, probabilities))
@@ -345,6 +344,50 @@ Consider a continuous random variable X with a uniform distribution over the int
 # Calculate the variance
 variance_continuous, _ = quad(lambda x: (x - expected_value_continuous)**2 * uniform_pdf(x), 2, 8)
 print("Variance (Continuous):", variance_continuous)
+```
+
+## Joint Probability Distributions
+
+A joint probability distribution describes the simultaneous behavior of two or more random variables. It provides the probabilities for every possible combination of values that the random variables can take.
+
+Consider two six-sided dice, X and Y, representing the outcomes of two independent rolls. The joint probability distribution is a table indicating the probability of each possible pair of outcomes (x,y).
+
+```{python}
+import numpy as np
+
+# Define the sample space and calculate joint probabilities
+sample_space_X = [1, 2, 3, 4, 5, 6]
+sample_space_Y = [1, 2, 3, 4, 5, 6]
+
+joint_probabilities = np.zeros((6, 6))
+
+for i, x in enumerate(sample_space_X):
+    for j, y in enumerate(sample_space_Y):
+        joint_probabilities[i, j] = 1/36  # Since each outcome is equally likely
+
+# Display the joint probability distribution
+print("Joint Probability Distribution:")
+print(joint_probabilities)
+```
+
+## Marginal Probability Distributions
+
+Marginal probability distributions focus on the probabilities of individual random variables without considering the others. In the context of joint distributions, these are obtained by summing or integrating over the values of the other variables.
+
+Consider two six-sided dice, X and Y, representing the outcomes of two independent rolls. The joint probability distribution is a table indicating the probability of each possible pair of outcomes (x,y). Let's calculate the marginal distributions of X and Y.
+
+
+```{python}
+# Calculate marginal probabilities
+marginal_X = np.sum(joint_probabilities, axis=1)
+marginal_Y = np.sum(joint_probabilities, axis=0)
+
+# Display the marginal probability distributions
+print("\nMarginal Probability Distribution of X:")
+print(marginal_X)
+
+print("\nMarginal Probability Distribution of Y:")
+print(marginal_Y)
 ```
 
 
