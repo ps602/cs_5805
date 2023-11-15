@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CS 5805: Machine Learning Course Project - Anomaly Detection</title>
+<title>CS 5805: Machine Learning Course Project - Clustering</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -125,7 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Probability Theory and Random Variables</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog0.html" rel="" target="">
+    <a class="nav-link active" href="./blog0.html" rel="" target="" aria-current="page">
  <span class="menu-text">Clustering</span></a>
   </li>  
   <li class="nav-item">
@@ -137,7 +137,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Classification</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./blog5.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./blog5.html" rel="" target="">
  <span class="menu-text">Anomaly Detection</span></a>
   </li>  
 </ul>
@@ -194,7 +194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Anomaly Detection</h1>
+<h1 class="title">Clustering</h1>
 </div>
 
 
@@ -283,7 +283,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>save_fig(<span class="st">"generated_data_plot"</span>)</span>
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="blog5_files/figure-html/cell-7-output-1.png" width="554" height="361"></p>
+<p><img src="blog0_files/figure-html/cell-7-output-1.png" width="554" height="361"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="7">
@@ -326,7 +326,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="blog5_files/figure-html/cell-11-output-1.png" width="554" height="361"></p>
+<p><img src="blog0_files/figure-html/cell-11-output-1.png" width="554" height="361"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="11">
@@ -430,7 +430,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb24-38"><a href="#cb24-38" aria-hidden="true" tabindex="-1"></a>save_fig(<span class="st">"gradient_descent_plot"</span>)</span>
 <span id="cb24-39"><a href="#cb24-39" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="blog5_files/figure-html/cell-18-output-1.png" width="938" height="360"></p>
+<p><img src="blog0_files/figure-html/cell-18-output-1.png" width="938" height="360"></p>
 </div>
 </div>
 </section>
@@ -479,7 +479,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb26-36"><a href="#cb26-36" aria-hidden="true" tabindex="-1"></a>save_fig(<span class="st">"sgd_plot"</span>)</span>
 <span id="cb26-37"><a href="#cb26-37" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="blog5_files/figure-html/cell-20-output-1.png" width="554" height="361"></p>
+<p><img src="blog0_files/figure-html/cell-20-output-1.png" width="554" height="361"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="20">
@@ -559,7 +559,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb32-47"><a href="#cb32-47" aria-hidden="true" tabindex="-1"></a>save_fig(<span class="st">"gradient_descent_paths_plot"</span>)</span>
 <span id="cb32-48"><a href="#cb32-48" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="blog5_files/figure-html/cell-24-output-1.png" width="650" height="358"></p>
+<p><img src="blog0_files/figure-html/cell-24-output-1.png" width="650" height="358"></p>
 </div>
 </div>
 </section>
@@ -583,7 +583,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>save_fig(<span class="st">"quadratic_data_plot"</span>)</span>
 <span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="blog5_files/figure-html/cell-26-output-1.png" width="554" height="360"></p>
+<p><img src="blog0_files/figure-html/cell-26-output-1.png" width="554" height="360"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="26">
@@ -628,7 +628,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>save_fig(<span class="st">"quadratic_predictions_plot"</span>)</span>
 <span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="blog5_files/figure-html/cell-30-output-1.png" width="554" height="360"></p>
+<p><img src="blog0_files/figure-html/cell-30-output-1.png" width="554" height="360"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="30">
@@ -658,7 +658,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb42-24"><a href="#cb42-24" aria-hidden="true" tabindex="-1"></a>save_fig(<span class="st">"high_degree_polynomials_plot"</span>)</span>
 <span id="cb42-25"><a href="#cb42-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="blog5_files/figure-html/cell-31-output-1.png" width="554" height="360"></p>
+<p><img src="blog0_files/figure-html/cell-31-output-1.png" width="554" height="360"></p>
 </div>
 </div>
 </section>
@@ -687,7 +687,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="blog5_files/figure-html/cell-32-output-1.png" width="554" height="360"></p>
+<p><img src="blog0_files/figure-html/cell-32-output-1.png" width="554" height="360"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="32">
@@ -718,7 +718,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>save_fig(<span class="st">"learning_curves_plot"</span>)</span>
 <span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="blog5_files/figure-html/cell-34-output-1.png" width="554" height="360"></p>
+<p><img src="blog0_files/figure-html/cell-34-output-1.png" width="554" height="360"></p>
 </div>
 </div>
 </section>
@@ -745,7 +745,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
 <span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="blog5_files/figure-html/cell-36-output-1.png" width="521" height="366"></p>
+<p><img src="blog0_files/figure-html/cell-36-output-1.png" width="521" height="366"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="36">
@@ -792,7 +792,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb50-31"><a href="#cb50-31" aria-hidden="true" tabindex="-1"></a>save_fig(<span class="st">"ridge_regression_plot"</span>)</span>
 <span id="cb50-32"><a href="#cb50-32" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="blog5_files/figure-html/cell-38-output-1.png" width="842" height="312"></p>
+<p><img src="blog0_files/figure-html/cell-38-output-1.png" width="842" height="312"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="38">
@@ -857,7 +857,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a>save_fig(<span class="st">"lasso_regression_plot"</span>)</span>
 <span id="cb61-10"><a href="#cb61-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="blog5_files/figure-html/cell-44-output-1.png" width="842" height="312"></p>
+<p><img src="blog0_files/figure-html/cell-44-output-1.png" width="842" height="312"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="44">
@@ -940,7 +940,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb62-77"><a href="#cb62-77" aria-hidden="true" tabindex="-1"></a>save_fig(<span class="st">"lasso_vs_ridge_plot"</span>)</span>
 <span id="cb62-78"><a href="#cb62-78" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="blog5_files/figure-html/cell-45-output-1.png" width="948" height="741"></p>
+<p><img src="blog0_files/figure-html/cell-45-output-1.png" width="948" height="741"></p>
 </div>
 </div>
 </section>
@@ -1016,7 +1016,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb65-53"><a href="#cb65-53" aria-hidden="true" tabindex="-1"></a>save_fig(<span class="st">"early_stopping_plot"</span>)</span>
 <span id="cb65-54"><a href="#cb65-54" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="blog5_files/figure-html/cell-47-output-1.png" width="554" height="360"></p>
+<p><img src="blog0_files/figure-html/cell-47-output-1.png" width="554" height="360"></p>
 </div>
 </div>
 </section>
@@ -1046,7 +1046,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb66-18"><a href="#cb66-18" aria-hidden="true" tabindex="-1"></a>save_fig(<span class="st">"logistic_function_plot"</span>)</span>
 <span id="cb66-19"><a href="#cb66-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="blog5_files/figure-html/cell-48-output-1.png" width="747" height="265"></p>
+<p><img src="blog0_files/figure-html/cell-48-output-1.png" width="747" height="265"></p>
 </div>
 </div>
 </section>
@@ -1241,7 +1241,7 @@ Name: target, dtype: int64</code></pre>
 <span id="cb77-25"><a href="#cb77-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb77-26"><a href="#cb77-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="blog5_files/figure-html/cell-55-output-1.png" width="746" height="265"></p>
+<p><img src="blog0_files/figure-html/cell-55-output-1.png" width="746" height="265"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="55">
@@ -1293,7 +1293,7 @@ Name: target, dtype: int64</code></pre>
 <span id="cb82-34"><a href="#cb82-34" aria-hidden="true" tabindex="-1"></a>save_fig(<span class="st">"logistic_regression_contour_plot"</span>)</span>
 <span id="cb82-35"><a href="#cb82-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="blog5_files/figure-html/cell-58-output-1.png" width="938" height="361"></p>
+<p><img src="blog0_files/figure-html/cell-58-output-1.png" width="938" height="361"></p>
 </div>
 </div>
 </section>
@@ -1355,7 +1355,7 @@ Name: target, dtype: int64</code></pre>
 <span id="cb88-30"><a href="#cb88-30" aria-hidden="true" tabindex="-1"></a>save_fig(<span class="st">"softmax_regression_contour_plot"</span>)</span>
 <span id="cb88-31"><a href="#cb88-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="blog5_files/figure-html/cell-62-output-1.png" width="938" height="360"></p>
+<p><img src="blog0_files/figure-html/cell-62-output-1.png" width="938" height="360"></p>
 </div>
 </div>
 </section>
@@ -1653,7 +1653,7 @@ Name: target, dtype: int64</code></pre>
 <span id="cb115-28"><a href="#cb115-28" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
 <span id="cb115-29"><a href="#cb115-29" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="blog5_files/figure-html/cell-80-output-1.png" width="821" height="366"></p>
+<p><img src="blog0_files/figure-html/cell-80-output-1.png" width="821" height="366"></p>
 </div>
 </div>
 <p>And now let’s measure the final model’s accuracy on the test set:</p>

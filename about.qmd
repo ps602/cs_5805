@@ -1,5 +1,5 @@
 ---
-title: Linear Regression and Non-Linear Regression
+title: Probability Theory and Random Variables
 jupyter: python3
 ---
 

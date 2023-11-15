@@ -1,5 +1,5 @@
 ---
-title: Classification
+title: Linear and Non-Linear Regression
 jupyter: python3
 ---
 
