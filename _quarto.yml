@@ -3,11 +3,11 @@ project:
   output-dir: docs
 
 website:
-  title: "ml_lr"
+  title: "CS 5805: Machine Learning Course Project"
   navbar:
     left:
       - href: index.qmd
-        text: Home
+        text: Linear Regression and Non-Linear Regressiion
       - about.qmd
 
 format:
