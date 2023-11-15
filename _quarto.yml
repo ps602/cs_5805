@@ -7,9 +7,11 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Linear Regression and Non-Linear Regressiion
+        text: Random Variables and Probability Theory
       - about.qmd
       - blog3.qmd
+      - blog4.qmd
+      - blog5.qmd
 
 format:
   html:

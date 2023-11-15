@@ -1,5 +1,5 @@
 ---
-title: Classification
+title: Anomaly Detection
 jupyter: python3
 ---
 

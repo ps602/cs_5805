@@ -1,5 +1,5 @@
 ---
-title: Setup
+title: Linear Regression and Non-Linear Regression
 jupyter: python3
 ---
 
