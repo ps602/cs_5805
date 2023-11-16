@@ -390,4 +390,104 @@ print("\nMarginal Probability Distribution of Y:")
 print(marginal_Y)
 ```
 
+# Conditional Probability 
 
+Conditional probability plays a crucial role in machine learning by allowing us to model the likelihood of an event given certain conditions. In the context of machine learning, it helps us make predictions based on observed evidence. Consider events A and B, the conditional probability of A given B is denoted as P(A|B), representing the probability of A occurring given that B has occurred.
+
+In machine learning, conditional probability is fundamental for tasks such as classification, where we want to predict the probability of a certain class given some input features.
+
+## Bayes' Theorem
+
+Bayes' Theorem is a powerful tool derived from conditional probability. It allows us to update the probability of a hypothesis based on new evidence. The formula is as follows:
+
+Insert formula
+P(A∣B) = P(B∣A)⋅P(A)/P(B)
+Where:
+P(A∣B) is the posterior probability (probability of A given B).
+P(B∣A) is the likelihood (probability of B given A).
+P(A) is the prior probability (probability of A).
+P(B) is the marginal likelihood (probability of B).
+
+Example: 
+
+Let's consider a simple example where we want to predict the probability of a student passing an exam (event A) given that they attended a study session (event B). We have the following probabilities:
+
+P(A)=0.7 (prior probability of passing)
+P(B∣A)=0.8 (likelihood of attending a study session given passing)
+P(B∣¬A)=0.4 (likelihood of attending a study session given not passing)
+
+```{python}
+# Define probabilities
+P_A = 0.7  # Prior probability of passing
+P_B_given_A = 0.8  # Likelihood of attending a study session given passing
+P_B_given_not_A = 0.4  # Likelihood of attending a study session given not passing
+
+# Calculate marginal likelihood P(B)
+P_B = P_B_given_A * P_A + P_B_given_not_A * (1 - P_A)
+
+# Calculate posterior probability P(A|B) using Bayes' Theorem
+P_A_given_B = (P_B_given_A * P_A) / P_B
+
+print(f"The probability of passing given attending a study session is: {P_A_given_B:.2f}")
+```
+
+In this example, we use Bayes' Theorem to update our prior belief (probability of passing) based on new evidence (attending a study session). The calculated posterior probability gives us an updated estimate of the likelihood of passing given the observed evidence.
+
+This demonstrates how conditional probability and Bayes' Theorem are applied in machine learning for making predictions and updating beliefs based on new information.
+
+# Probabilistic Models: Naive Bayes Classifier
+
+One of the classic examples of a probabilistic model in machine learning is the Naive Bayes classifier. This algorithm is based on Bayes' Theorem and assumes that features are conditionally independent given the class. Despite its simplicity, Naive Bayes performs well in various classification tasks, especially in text classification.
+
+The Bayes' theorem in the context of classification is as follows,
+
+P(A∣B) = P(B∣A)⋅P(A)/P(B)
+
+In the context of classification: P(A∣B) is the probability of class A given the observed features B.
+P(B∣A) is the likelihood of observing features B given class A.
+P(A) is the prior probability of class A.
+P(B) is the evidence probability, which is the same for all classes and can be ignored when comparing probabilities.
+
+The "naive" assumption in Naive Bayes is that the features are conditionally independent given the class. This means that the presence or absence of a particular feature is assumed to be unrelated to the presence or absence of any other feature given the class.
+
+P(features∣class)=P(feature_1∣class)⋅P(feature_2∣class)⋅…⋅P(feature_n∣class)
+
+The Naive Bayes classifier calculates the probability of each class given the observed features and assigns the class with the highest probability as the prediction.
+
+Predicted Class = argmax_c P(class=c∣features)
+
+Let's consider a text classification example where we want to classify emails as spam or not spam based on the occurrence of certain words.
+
+```{python}
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.feature_extraction.text import CountVectorizer
+
+# Sample data: emails and their labels
+emails = [
+    ('Get a brand new iPhone for free!', 'spam'),
+    ('Meeting at 2 pm in the conference room', 'not_spam'),
+    # Add more examples
+]
+
+# Separate data into features (X) and labels (y)
+X, y = zip(*emails)
+
+# Convert text data to numerical format using CountVectorizer
+vectorizer = CountVectorizer()
+X = vectorizer.fit_transform(X)
+
+# Create and train the Multinomial Naive Bayes classifier
+classifier = MultinomialNB()
+classifier.fit(X, y)
+
+# Make predictions for new data
+new_email = ['Congratulations! You have won a million dollars!']
+new_email_vectorized = vectorizer.transform(new_email)
+prediction = classifier.predict(new_email_vectorized)
+
+print(f"The predicted class for the new email is: {prediction[0]}")
+```
+
+In this example, we use the MultinomialNB class from scikit-learn to implement a Naive Bayes classifier. We have considered Multinomial Naive Bayes as it is suitable for discrete data, often used in text classification. It also assumes features represent word counts or frequencies. The CountVectorizer is used to convert text data into a numerical format that the classifier can handle. The model is then trained on the training set and evaluated on the test set.
+
+This demonstrates how probability theory, particularly Bayes' Theorem, is applied in a machine learning context to build a probabilistic model for classification. Naive Bayes classifiers are widely used in spam detection, sentiment analysis, and other text classification tasks.
